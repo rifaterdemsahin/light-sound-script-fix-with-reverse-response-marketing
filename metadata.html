@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YouTube Metadata</title>
+<style>
+  :root { --bg:#0b1020; --card:#161d40; --ink:#f5f3ee; --dim:#9aa3c7; --accent:#ffb547; --line:#2c3563; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 -apple-system,"Helvetica Neue",Arial,sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 40px 16px 80px; }
+  h1 { margin: 0 0 4px; } h2 { font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin: 36px 0 8px; }
+  .sub { color: var(--dim); }
+  .box { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; white-space: pre-wrap; word-break: break-word; }
+  .row { display:flex; gap:10px; align-items:center; justify-content:space-between; margin-bottom:8px; }
+  button, a.btn { font: 700 13px inherit; font-family: inherit; padding: 7px 14px; border-radius: 8px; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; text-decoration: none; }
+  button:hover, a.btn:hover { border-color: var(--accent); }
+  img { width: 100%; border-radius: 12px; border: 1px solid var(--line); display: block; }
+  .count { color: var(--dim); font-size: 13px; }
+  .warn { border-color: var(--accent); }
+  ul { color: var(--dim); }
+</style></head><body><main>
+<h1>YouTube metadata</h1>
+<div class="sub">You're the Pilot · Short, 38.9 s, 9:16</div>
+
+<h2>Thumbnail (1280×720)</h2>
+<img src="thumbnail.png" alt="Thumbnail: AI has no values. You do.">
+<p><a class="btn" href="thumbnail.png" download>Download thumbnail.png</a></p>
+
+<h2>Title</h2>
+<div class="row"><span class="count" id="tc"></span><button data-copy="title">Copy</button></div>
+<div class="box" id="title">AI Has No Values. You Do. (You're the Pilot) #Shorts</div>
+<p class="sub">Alternates: "Stop Judging AI's Values. Judge Yours." · "Nobody Asked the Horse for Its Values"</p>
+
+<h2>Description</h2>
+<div class="row"><span class="count" id="dc"></span><button data-copy="desc">Copy</button></div>
+<div class="box" id="desc">A horse had no values. Neither does AI.
+
+Someone says technology is never neutral. We rode horses and drove cars, and now we pilot bots, robots and AI. Arguing about whether the machine is good or bad misses the point. The values worth talking about are ours.
+
+Three questions to audit the pilot:
+1. What do you want it to do?
+2. Who does it affect?
+3. Would you sign your name under it?
+
+Want to work through these with other pilots? Join our Skool community, Delivery Pilot: &lt;SKOOL_URL&gt;
+
+This is our opinion, a reply to the idea that technology is never neutral. Visuals, voice and music in this video are AI-generated.
+
+#Shorts #AI #AIEthics #Technology #Values</div>
+
+<h2>Tags</h2>
+<div class="row"><span class="count" id="gc"></span><button data-copy="tags">Copy</button></div>
+<div class="box" id="tags">AI values, AI ethics, is technology neutral, technology is never neutral, AI is a tool, human values, AI responsibility, AI pilot, you're the pilot, AI opinion, bots and robots, AI debate, Delivery Pilot, Skool community, Shorts</div>
+
+<h2>Upload settings</h2>
+<div class="box">Visibility: Public (after you fill in the Skool link)
+Format: Short (vertical, under 60 s)
+Audience: Not made for kids
+Altered or synthetic content: <b>Yes</b>. The voice, visuals and music are AI-generated and look realistic.
+Category: People &amp; Blogs, or Science &amp; Technology
+Language: English
+Pinned comment: "What's one value you'd never hand to a bot? Join Delivery Pilot on Skool: &lt;SKOOL_URL&gt;"</div>
+
+<h2>Before you publish</h2>
+<div class="box warn">
+<ul>
+<li>Replace <b>&lt;SKOOL_URL&gt;</b> in the description and the pinned comment. I don't have your link.</li>
+<li>Listen to the video once. I have not heard the voice or music.</li>
+<li>Check you may reuse the source clip's quote. The video only shows a short paraphrase on a card.</li>
+<li>"It goes where the pilot points it" is an opinion, so the description frames it as one.</li>
+</ul></div>
+
+<script>
+  const $ = (id) => document.getElementById(id);
+  const txt = (id) => $(id).innerText;
+  $("tc").textContent = txt("title").length + " / 100 characters";
+  $("dc").textContent = txt("desc").length + " / 5000 characters";
+  $("gc").textContent = txt("tags").length + " / 500 characters";
+  document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(txt(b.dataset.copy)); b.textContent = "Copied"; }
+    catch { b.textContent = "Select and copy"; }
+    setTimeout(() => (b.textContent = "Copy"), 1500);
+  }));
+</script>
+</main></body></html>

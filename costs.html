@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Production Costs</title>
+<style>
+  :root { --bg:#0b1020; --card:#161d40; --ink:#f5f3ee; --dim:#9aa3c7; --accent:#ffb547; --teal:#5eead4; --line:#2c3563; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 -apple-system,"Helvetica Neue",Arial,sans-serif; }
+  main { max-width: 980px; margin:0 auto; padding: 40px 16px 80px; }
+  h1 { margin:0 0 4px; } h2 { color:var(--teal); font-size:20px; margin:36px 0 10px; }
+  .sub { color:var(--dim); }
+  .tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin:24px 0; }
+  .tile { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; }
+  .tile b { display:block; font-size:32px; color:var(--accent); }
+  .tile span { color:var(--dim); font-size:14px; }
+  .wrap { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; min-width:720px; }
+  th,td { text-align:left; vertical-align:top; padding:10px 12px; border-bottom:1px solid var(--line); font-size:14px; }
+  th { color:var(--dim); font-size:12px; letter-spacing:.08em; text-transform:uppercase; }
+  td.n { font-variant-numeric:tabular-nums; font-weight:700; white-space:nowrap; }
+  tfoot td { font-weight:800; font-size:16px; border-bottom:0; }
+  code { background:#0f1530; border:1px solid var(--line); border-radius:6px; padding:1px 6px; color:var(--teal); font-size:12px; }
+  ul { color:var(--dim); } li { margin:4px 0; }
+  .note { border:1px solid var(--accent); border-radius:12px; padding:14px 18px; background:var(--card); }
+  a { color:var(--accent); }
+</style></head><body><main>
+<h1>Production costs</h1>
+<div class="sub">"You're the Pilot" · fal.ai spend for one Short plus thumbnail</div>
+
+<div class="tiles">
+  <div class="tile"><b>$0.19</b><span>Total spent, all calls including mistakes</span></div>
+  <div class="tile"><b>$0.14</b><span>Cost to rebuild the final set from scratch, with no mistakes</span></div>
+  <div class="tile"><b>$0.00</b><span>Re-running the pipeline. Every output is cached in <code>assets/</code></span></div>
+  <div class="tile"><b>$0.00</b><span>Whisper, ffmpeg and Remotion all run on this Mac</span></div>
+</div>
+
+<h2>Line items</h2>
+<div class="wrap"><table>
+<thead><tr><th>Item</th><th>Unit price</th><th>What we ran</th><th>Cost</th><th>Note</th></tr></thead>
+<tbody><tr><td><b>Images (flux/schnell)</b><br><code>fal-ai/flux/schnell</code></td><td>$0.003 / megapixel</td><td>5 images: 4 at 768×1344 (1.03 MP) + thumbnail 1280×720 (0.92 MP) = 5.05 MP</td><td class='n'>$0.015</td><td>Kept: 3 shots + thumbnail. 1 was a test probe (deleted).</td></tr><tr><td><b>Animation, final</b><br><code>fal-ai/ltx-video-13b-distilled/image-to-video</code></td><td>$0.04 / unit</td><td>2 clips (car, cockpit), 480p, 5 s</td><td class='n'>$0.080</td><td>Kept. Assumes 1 unit per clip. Check the dashboard.</td></tr><tr><td><b>Animation, wasted</b><br><code>fal-ai/ltx-video/image-to-video</code></td><td>$0.02 / video</td><td>2 clips, came out stretched to landscape</td><td class='n'>$0.040</td><td>Thrown away. Mistake cost.</td></tr><tr><td><b>Voiceover</b><br><code>fal-ai/kokoro/american-english</code></td><td>$0.02 / 1000 chars</td><td>2 runs: about 664 chars, then 682 chars (added the community name)</td><td class='n'>$0.027</td><td>1 run kept. The first was replaced.</td></tr><tr><td><b>Music</b><br><code>cassetteai/music-generator</code></td><td>$0.02 / minute</td><td>1 track, 36 s = 0.6 min</td><td class='n'>$0.012</td><td>Kept.</td></tr><tr><td><b>Sound effects</b><br><code>cassetteai/sound-effects-generator</code></td><td>$0.01 / generation</td><td>2 generations (whoosh, click)</td><td class='n'>$0.020</td><td>Kept.</td></tr></tbody>
+<tfoot><tr><td colspan="3">Total</td><td class="n">$0.194</td><td></td></tr></tfoot>
+</table></div>
+<p class="sub">Unit prices come from fal's pricing API, read on 2026-11-10. Costs are my estimate from those prices and the calls I made, not an invoice. For the real figure, check the fal.ai dashboard billing page. If fal rounds each image up to a whole megapixel, image cost could be up to $0.027 instead of $0.015.</p>
+
+<h2>Free (runs locally)</h2>
+<ul><li>Whisper (word timestamps)</li><li>ffmpeg (voice clean, mix, loudness)</li><li>Remotion (graphics, subtitles, render)</li><li>Thumbnail text and Skool end card</li></ul>
+
+<h2>Where the money went</h2>
+<ul>
+  <li>Animation is the biggest line: about 60% of spend. Two hero clips at $0.04 each.</li>
+  <li>Mistakes cost $0.06: two stretched landscape clips, one test image and one voiceover redone to add the community name.</li>
+</ul>
+
+<h2>How to spend less next time</h2>
+<ul>
+  <li>Animate one hero shot, not two. Saves $0.04.</li>
+  <li>Test each new fal model on one image first. Check the output size (9:16) before running the second clip.</li>
+  <li>Lock the script, including the CTA, before generating the voice. Each redo costs about $0.014.</li>
+  <li>Generate one music bed and reuse it across Shorts. It costs about $0.012 and loops.</li>
+  <li>Make sound effects once and keep them in a shared folder. Two generations cost $0.02.</li>
+  <li>Images are already the cheapest part: flux/schnell at 4 steps is about $0.003 each.</li>
+</ul>
+
+<div class="note"><b>Not counted:</b> your time, Azure or other hosting, and any YouTube or Skool fees. The thumbnail background image is counted above.</div>
+
+<p><a href="index.html">Back to the project page</a></p>
+</main></body></html>

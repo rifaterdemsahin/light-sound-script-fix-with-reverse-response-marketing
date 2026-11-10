@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+video/audio.mp3
+remotion/out/*
+!remotion/out/short.mp4
+remotion/public/img/
+remotion/public/video/
+remotion/public/mix.wav
+remotion/public/data.json
