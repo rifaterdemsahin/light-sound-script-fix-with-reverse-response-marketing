@@ -79,7 +79,7 @@ const Shot: React.FC<{ s: Scene }> = ({ s }) => {
   const { fps } = useVideoConfig();
   const dur = (s.end - s.start) * fps;
   const zoom = interpolate(frame, [0, dur], [1, 1.08]);
-  const hero = s.art === "car" || s.art === "cockpit";
+  const hero = s.art === "car" || s.art === "command";
   const media = hero ? (
     <Freeze frame={Math.min(frame, 148)}>
       <OffthreadVideo src={staticFile(`video/${s.art}.mp4`)} muted

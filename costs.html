@@ -28,7 +28,7 @@
 <div class="sub">"You're the Pilot" · fal.ai spend for one Short plus thumbnail</div>
 
 <div class="tiles">
-  <div class="tile"><b>$0.19</b><span>Total spent, all calls including mistakes</span></div>
+  <div class="tile"><b>$0.24</b><span>Total spent, all calls including mistakes</span></div>
   <div class="tile"><b>$0.14</b><span>Cost to rebuild the final set from scratch, with no mistakes</span></div>
   <div class="tile"><b>$0.00</b><span>Re-running the pipeline. Every output is cached in <code>assets/</code></span></div>
   <div class="tile"><b>$0.00</b><span>Whisper, ffmpeg and Remotion all run on this Mac</span></div>
@@ -37,8 +37,8 @@
 <h2>Line items</h2>
 <div class="wrap"><table>
 <thead><tr><th>Item</th><th>Unit price</th><th>What we ran</th><th>Cost</th><th>Note</th></tr></thead>
-<tbody><tr><td><b>Images (flux/schnell)</b><br><code>fal-ai/flux/schnell</code></td><td>$0.003 / megapixel</td><td>5 images: 4 at 768×1344 (1.03 MP) + thumbnail 1280×720 (0.92 MP) = 5.05 MP</td><td class='n'>$0.015</td><td>Kept: 3 shots + thumbnail. 1 was a test probe (deleted).</td></tr><tr><td><b>Animation, final</b><br><code>fal-ai/ltx-video-13b-distilled/image-to-video</code></td><td>$0.04 / unit</td><td>2 clips (car, cockpit), 480p, 5 s</td><td class='n'>$0.080</td><td>Kept. Assumes 1 unit per clip. Check the dashboard.</td></tr><tr><td><b>Animation, wasted</b><br><code>fal-ai/ltx-video/image-to-video</code></td><td>$0.02 / video</td><td>2 clips, came out stretched to landscape</td><td class='n'>$0.040</td><td>Thrown away. Mistake cost.</td></tr><tr><td><b>Voiceover</b><br><code>fal-ai/kokoro/american-english</code></td><td>$0.02 / 1000 chars</td><td>2 runs: about 664 chars, then 682 chars (added the community name)</td><td class='n'>$0.027</td><td>1 run kept. The first was replaced.</td></tr><tr><td><b>Music</b><br><code>cassetteai/music-generator</code></td><td>$0.02 / minute</td><td>1 track, 36 s = 0.6 min</td><td class='n'>$0.012</td><td>Kept.</td></tr><tr><td><b>Sound effects</b><br><code>cassetteai/sound-effects-generator</code></td><td>$0.01 / generation</td><td>2 generations (whoosh, click)</td><td class='n'>$0.020</td><td>Kept.</td></tr></tbody>
-<tfoot><tr><td colspan="3">Total</td><td class="n">$0.194</td><td></td></tr></tfoot>
+<tbody><tr><td><b>Images (flux/schnell)</b><br><code>fal-ai/flux/schnell</code></td><td>$0.003 / megapixel</td><td>5 images: 4 at 768×1344 (1.03 MP) + thumbnail 1280×720 (0.92 MP) = 5.05 MP</td><td class='n'>$0.015</td><td>Kept: 3 shots + thumbnail. 1 was a test probe (deleted).</td></tr><tr><td><b>Animation, final</b><br><code>fal-ai/ltx-video-13b-distilled/image-to-video</code></td><td>$0.04 / unit</td><td>2 clips (car, cockpit), 480p, 5 s</td><td class='n'>$0.080</td><td>Kept. Assumes 1 unit per clip. Check the dashboard.</td></tr><tr><td><b>Animation, wasted</b><br><code>fal-ai/ltx-video/image-to-video</code></td><td>$0.02 / video</td><td>2 clips, came out stretched to landscape</td><td class='n'>$0.040</td><td>Thrown away. Mistake cost.</td></tr><tr><td><b>Voiceover</b><br><code>fal-ai/kokoro/american-english</code></td><td>$0.02 / 1000 chars</td><td>2 runs: about 664 chars, then 682 chars (added the community name)</td><td class='n'>$0.027</td><td>1 run kept. The first was replaced.</td></tr><tr><td><b>Music</b><br><code>cassetteai/music-generator</code></td><td>$0.02 / minute</td><td>1 track, 36 s = 0.6 min</td><td class='n'>$0.012</td><td>Kept.</td></tr><tr><td><b>Sound effects</b><br><code>cassetteai/sound-effects-generator</code></td><td>$0.01 / generation</td><td>2 generations (whoosh, click)</td><td class='n'>$0.020</td><td>Kept.</td></tr><tr><td><b>Replaced shot</b><br><code>flux/schnell + ltx-13b-distilled</code></td><td>$0.003 / MP, $0.04 / unit</td><td>2 images (first had garbled text on the map) + 1 clip for the command-center shot</td><td class='n'>$0.046</td><td>Kept: 1 image + 1 clip. The earlier cockpit clip is no longer used.</td></tr></tbody>
+<tfoot><tr><td colspan="3">Total</td><td class="n">$0.240</td><td></td></tr></tfoot>
 </table></div>
 <p class="sub">Unit prices come from fal's pricing API, read on 2026-11-10. Costs are my estimate from those prices and the calls I made, not an invoice. For the real figure, check the fal.ai dashboard billing page. If fal rounds each image up to a whole megapixel, image cost could be up to $0.027 instead of $0.015.</p>
 
@@ -48,7 +48,7 @@
 <h2>Where the money went</h2>
 <ul>
   <li>Animation is the biggest line: about 60% of spend. Two hero clips at $0.04 each.</li>
-  <li>Mistakes cost $0.06: two stretched landscape clips, one test image and one voiceover redone to add the community name.</li>
+  <li>Mistakes and replaced work cost $0.10: two stretched landscape clips, one test image, one voiceover redone to add the community name, a rejected image with garbled text, and the cockpit shot replaced by the command-center shot.</li>
 </ul>
 
 <h2>How to spend less next time</h2>

@@ -4,6 +4,7 @@ import fal
 root = pathlib.Path(__file__).resolve().parent.parent
 MODEL = sys.argv[1] if len(sys.argv) > 1 else "fal-ai/ltx-video/image-to-video"
 HERO = {
+ "command": "small robot units glide along the glowing delivery routes carrying parcels between warehouses and homes on the holographic map, the person watches calmly, subtle camera push in, cinematic",
  "car": "the car drives forward smoothly down the highway, road markings flowing toward the camera, gentle camera motion, cinematic",
  "cockpit": "white delivery drones and robots drift slowly through the clouds outside the window, subtle camera movement, cinematic",
 }

@@ -50,7 +50,7 @@ npm run render   # writes out/short.mp4</pre>
 <h2>Assets and cost (fal.ai)</h2>
 <ul>
   <li>Images: <code>fal-ai/flux/schnell</code>, 4 steps, 768×1344, 3 images (horse, car, cockpit). Real-photo look, no on-image text.</li>
-  <li>Animation: <code>fal-ai/ltx-video-13b-distilled/image-to-video</code>, 480p, 2 hero shots only (car, cockpit). The horse uses Ken Burns.</li>
+  <li>Animation: <code>fal-ai/ltx-video-13b-distilled/image-to-video</code>, 480p, 2 hero shots only (car, command center). The horse uses Ken Burns.</li>
   <li>Voice: <code>fal-ai/kokoro/american-english</code>, one call, then cleaned (highpass, 1.12x tempo, loudnorm).</li>
   <li>Music and SFX: <code>cassetteai/music-generator</code> and <code>cassetteai/sound-effects-generator</code>, one 36 s bed plus two 1–2 s effects.</li>
   <li>Total of 9 generation calls. Outputs are cached in <code>assets/</code>, so re-running costs nothing. See the <a href="costs.html" style="color:#ffb547">costs page</a> for the breakdown.</li>

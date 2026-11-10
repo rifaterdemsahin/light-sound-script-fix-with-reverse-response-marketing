@@ -52,7 +52,7 @@ END.
 | 1 | Hook | Typed hook card on frame 0 | Remotion hook card |
 | 2 | Act 1: "We rode a horse" | Rider on a horse, from behind | fal flux/schnell, 4 steps, Ken Burns |
 | 3 | Act 1: "We drove a car" | Windscreen view of a car drive, road ahead | fal flux/schnell, **hero shot 1** (image-to-video) |
-| 4 | Act 2: "Pilots of something new" | Cockpit view, bots and robots outside the window | fal flux/schnell, **hero shot 2** (image-to-video) |
+| 4 | Act 2: "Pilots of something new" | Pilot with headset overseeing a delivery-route strategy map, friendly bots carrying parcels (command-and-conquer view, delivery of value, not war) | fal flux/schnell, **hero shot 2** (image-to-video) |
 | 5 | Act 2: "The trap" | Source clip screenshot, arrow on "never neutral" | Real screenshot, moving-arrow callout |
 | 6 | Act 3: pilot questions | Flow: What → Who → Sign your name | Remotion SVG scene (pattern: `JevSketch.tsx`) |
 | 7 | Act 3: close | Banner: "Tool: no values. Pilot: yours." | Remotion banner |

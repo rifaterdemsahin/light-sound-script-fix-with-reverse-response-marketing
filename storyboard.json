@@ -41,10 +41,10 @@
       "start": 11.0,
       "end": 16.0,
       "type": "shot",
-      "image_prompt": "cockpit view with friendly robots and drones outside the window, cinematic, no text, letters, numbers, UI",
+      "image_prompt": "over-the-shoulder pilot in a headset overseeing a holographic delivery-route strategy map with friendly robot units (command-and-conquer view, delivery of value, not war), no text",
       "motion": "image_to_video",
       "voice": "Now we're pilots of something new: bots, robots, AI. And we keep asking if the machine is good or bad.",
-      "art": "cockpit"
+      "art": "command"
     },
     {
       "id": 5,
