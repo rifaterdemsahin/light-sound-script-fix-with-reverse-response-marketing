@@ -7,3 +7,4 @@ remotion/public/img/
 remotion/public/video/
 remotion/public/mix.wav
 remotion/public/data.json
+__pycache__/
