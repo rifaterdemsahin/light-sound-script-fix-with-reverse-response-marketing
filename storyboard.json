@@ -1,0 +1,95 @@
+{
+  "title": "You're the Pilot",
+  "language": "en",
+  "max_seconds": 35,
+  "cta_url": "<SKOOL_URL>",
+  "scenes": [
+    {
+      "id": 1,
+      "act": "hook",
+      "start": 0.0,
+      "end": 3.0,
+      "type": "hook_card",
+      "text": "A horse had no values. Neither does AI.",
+      "voice": null
+    },
+    {
+      "id": 2,
+      "act": "1",
+      "start": 3.0,
+      "end": 7.0,
+      "type": "shot",
+      "image_prompt": "rider on a horse seen from behind, open field, cinematic, no text, letters, numbers, UI",
+      "motion": "ken_burns",
+      "voice": "Someone says technology is never neutral, that AI is built to control. But look at history. We rode a horse.",
+      "art": "horse"
+    },
+    {
+      "id": 3,
+      "act": "1",
+      "start": 7.0,
+      "end": 11.0,
+      "type": "shot",
+      "image_prompt": "windscreen view of a car driving down an open road, cinematic, no text, letters, numbers, UI",
+      "motion": "image_to_video",
+      "voice": "We drove a car. Nobody asked the horse for its values.",
+      "art": "car"
+    },
+    {
+      "id": 4,
+      "act": "2",
+      "start": 11.0,
+      "end": 16.0,
+      "type": "shot",
+      "image_prompt": "over-the-shoulder pilot in a headset overseeing a holographic delivery-route strategy map with friendly robot units (command-and-conquer view, delivery of value, not war), no text",
+      "motion": "image_to_video",
+      "voice": "Now we're pilots of something new: bots, robots, AI. And we keep asking if the machine is good or bad.",
+      "art": "command"
+    },
+    {
+      "id": 5,
+      "act": "2",
+      "start": 16.0,
+      "end": 23.0,
+      "type": "screenshot_callout",
+      "image": "video/source_frame.png",
+      "callout": "never neutral",
+      "voice": "That's the trap. It has no values to argue about. It goes where the pilot points it. Debate the tool all day and you never touch the one thing that matters.",
+      "quote": "Technology is|never neutral|because it's not God-given."
+    },
+    {
+      "id": 6,
+      "act": "3",
+      "start": 23.0,
+      "end": 27.0,
+      "type": "svg_flow",
+      "steps": [
+        "What do you want it to do?",
+        "Who does it affect?",
+        "Would you sign your name?"
+      ],
+      "voice": "So audit the pilot. What do you want it to do? Who does it affect? Would you sign your name under it?"
+    },
+    {
+      "id": 7,
+      "act": "3",
+      "start": 27.0,
+      "end": 29.0,
+      "type": "banner",
+      "text": "Tool: no values. Pilot: yours.",
+      "voice": "You're the pilot. Choose like it.",
+      "sub": "Pilot first. Tool second."
+    },
+    {
+      "id": 8,
+      "act": "cta",
+      "start": 29.0,
+      "end": 33.0,
+      "type": "banner",
+      "text": "Join Delivery Pilot",
+      "voice": "Want to work through those questions with other pilots? Join our Skool community, Delivery Pilot. Link in the description.",
+      "sub": "on Skool \u00b7 link in the description",
+      "image": "skool.png"
+    }
+  ]
+}

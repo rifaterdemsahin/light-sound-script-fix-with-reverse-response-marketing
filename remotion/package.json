@@ -1,0 +1,20 @@
+{
+  "name": "pilot-short",
+  "private": true,
+  "scripts": {
+    "prep": "python3 ../scripts/prep_remotion.py",
+    "studio": "npm run prep && remotion studio src/index.ts",
+    "render": "npm run prep && remotion render src/index.ts Short out/short.mp4",
+    "still": "remotion still src/index.ts Short out/still.png"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.542",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.542"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}
