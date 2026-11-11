@@ -12,8 +12,5 @@ export const FONT =
   "Inter, 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif";
 
 export const ACT_LABEL: Record<string, string> = {
-  "1": "ACT 1 · SETUP",
-  "2": "ACT 2 · THE TRAP",
-  "3": "ACT 3 · THE PAYOFF",
   cta: "JOIN US",
 };

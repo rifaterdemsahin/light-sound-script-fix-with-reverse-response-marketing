@@ -6,7 +6,7 @@ import { Thumb } from "./Thumb";
 
 export const Root: React.FC = () => (
   <>
-  <Composition id="Thumb" component={Thumb} width={1280} height={720} fps={30} durationInFrames={1} />
+  <Composition id="Thumb" component={Thumb} width={1080} height={1920} fps={30} durationInFrames={1} />
   <Composition
     id="Short"
     component={Short}
